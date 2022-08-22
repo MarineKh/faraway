@@ -6,8 +6,8 @@ import EditModal from "../EditModal/EditModal";
 import DeleteModal from "../EditModal/DeleteModal";
 
 import {setSelectedUser} from "../../store/slices/globalSlice";
-import '../../styles/content.scss';
 import image from '../../assets/home_illustration.jpg';
+import '../../styles/content.scss';
 
 const Content = ({ data, isHomePage= false}) => {
     const dispatch = useDispatch();
@@ -19,7 +19,6 @@ const Content = ({ data, isHomePage= false}) => {
         dispatch(setSelectedUser(data))
     },[data, dispatch]);
 
-
     return (
             isHomePage ? (
                 <div className='home-content flex-center flex-column w100'>
@@ -28,7 +27,6 @@ const Content = ({ data, isHomePage= false}) => {
                 </div>
             ) : (
                 <>
-
                     <div className='user-info-box flex-center'>
                         <div className='user-info flex-center'>
                             <FaIcons.FaUser className='name'/>

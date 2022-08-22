@@ -10,12 +10,7 @@ const getStorageItem = (key) => {
     }
 };
 
-const removeStorageItem = (key) => {
-    localStorage.removeItem(key);
-};
-
 export {
     setStorageItem,
     getStorageItem,
-    removeStorageItem,
 };
