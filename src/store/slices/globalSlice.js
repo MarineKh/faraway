@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { initialState } from './initialState';
+import {createSlice} from '@reduxjs/toolkit';
+import {initialState} from './initialState';
 import {setStorageItem} from "../../helpers/localStorage";
 
 export const globalSlice = createSlice({

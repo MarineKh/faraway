@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import { NavLink } from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import * as FaIcons from "react-icons/fa";
 
 import { isEditModalOpen, isDeleteModalOpen, isSidebarMenuOpen } from "../../store/slices/globalSlice";

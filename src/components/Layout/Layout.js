@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react"
 import {useDispatch, useSelector} from "react-redux";
 
+import Sidebar from "../SideBar/Sidebar";
 import {isSidebarMenuOpen, setUsers} from "../../store/slices/globalSlice";
 import hamburger from '../../assets/menu-hamburger.svg';
-import Sidebar from "../SideBar/Sidebar";
 import '../../styles/helpers.scss';
 import '../../styles/header.scss';
 

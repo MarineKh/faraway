@@ -4,7 +4,6 @@ import Layout from "./components/Layout/Layout";
 import AppRoutes from "./Routes";
 
 function App() {
-
     return (
         <Layout>
             <AppRoutes />

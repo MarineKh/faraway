@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 import {isDeleteModalOpen, setUsers} from "../../store/slices/globalSlice";
 import '../../styles/editmodal.scss';
@@ -28,7 +28,7 @@ const DeleteModal = ({ selectedUser }) => {
 
                 <div className='modal-footer flex'>
                     <button type='submit' onClick={handleSaveData}>Yes</button>
-                    <button className='cancel' onClick={ ()=> dispatch(isDeleteModalOpen(false))}>Cancel</button>
+                    <button className='cancel' onClick={()=> dispatch(isDeleteModalOpen(false))}>Cancel</button>
                 </div>
             </div>
         </div>
