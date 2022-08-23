@@ -1,23 +1,22 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import React from 'react';
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 
 import EditModal from "../Modals/EditModal";
 import DeleteModal from "../Modals/DeleteModal";
 
-import {setSelectedUser} from "../../store/slices/globalSlice";
 import image from '../../assets/home_illustration.jpg';
 import '../../styles/content.scss';
 
-const Content = ({ data, isHomePage= false}) => {
-    const dispatch = useDispatch();
+const Content = ({isHomePage= false}) => {
+    const { userId } = useParams();
 
+    const usersData = useSelector(state => state.global.usersData);
     const isEditModalOpen = useSelector(state => state.global.isEditModalOpen);
     const isDeleteModalOpen = useSelector(state => state.global.isDeleteModalOpen);
 
-    useEffect(()=> {
-        dispatch(setSelectedUser(data))
-    },[data, dispatch]);
+    const selectedUser = usersData.filter(user => user.id === +userId)[0];
 
     return (
             isHomePage ? (
@@ -32,7 +31,7 @@ const Content = ({ data, isHomePage= false}) => {
                             <FaIcons.FaUser className='name'/>
                             <div className='user-details'>
                                 <span className='info-label'>Name</span>
-                                <span>{data.name}</span>
+                                <span>{selectedUser.name}</span>
                             </div>
                         </div>
 
@@ -40,7 +39,7 @@ const Content = ({ data, isHomePage= false}) => {
                             <FaIcons.FaPhone className='phone'/>
                             <div className='user-details'>
                                 <span className='info-label'>Phone</span>
-                                <span>{data.phone}</span>
+                                <span>{selectedUser.phone}</span>
                             </div>
                         </div>
 
@@ -48,7 +47,7 @@ const Content = ({ data, isHomePage= false}) => {
                             <FaIcons.FaMailBulk className='email'/>
                             <div className='user-details'>
                                 <span className='info-label'>Email</span>
-                                <span>{data.email}</span>
+                                <span>{selectedUser.email}</span>
                             </div>
                         </div>
 
@@ -56,13 +55,13 @@ const Content = ({ data, isHomePage= false}) => {
                             <FaIcons.FaTransgender className='gender'/>
                             <div className='user-details'>
                                 <span className='info-label'>Gender</span>
-                                <span>{data.gender}</span>
+                                <span>{selectedUser.gender}</span>
                             </div>
                         </div>
                     </div>
 
-                    {isEditModalOpen && <EditModal />}
-                    {isDeleteModalOpen && <DeleteModal />}
+                    {isEditModalOpen && <EditModal selectedUser={selectedUser} />}
+                    {isDeleteModalOpen && <DeleteModal selectedUser={selectedUser} />}
                 </>
             )
     );

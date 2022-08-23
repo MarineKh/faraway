@@ -10,9 +10,6 @@ export const globalSlice = createSlice({
             setStorageItem('localUsersData', action.payload);
             state.usersData = action.payload;
         },
-        setSelectedUser(state, action) {
-            state.selectedUser = action.payload;
-        },
         isSidebarMenuOpen(state, action) {
             state.isSidebarMenuOpen = action.payload;
         },
@@ -25,5 +22,5 @@ export const globalSlice = createSlice({
     },
 });
 
-export const { setUsers, isSidebarMenuOpen, setSelectedUser, isEditModalOpen, isDeleteModalOpen } = globalSlice.actions;
+export const { setUsers, isSidebarMenuOpen, isEditModalOpen, isDeleteModalOpen } = globalSlice.actions;
 export default globalSlice.reducer;

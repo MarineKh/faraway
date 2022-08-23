@@ -2,10 +2,11 @@ import React, {useEffect, useState} from "react"
 import {useDispatch, useSelector} from "react-redux";
 
 import {isSidebarMenuOpen, setUsers} from "./store/slices/globalSlice";
-import AppRoutes from "./Routes";
+import Layout from "./components/Layout/Layout";
 import Sidebar from "./components/SideBar/Sidebar";
-import hamburger from './assets/menu-hamburger.svg'
+import AppRoutes from "./Routes";
 
+import hamburger from './assets/menu-hamburger.svg'
 import './styles/helpers.scss';
 import './styles/header.scss';
 
@@ -24,16 +25,16 @@ function App() {
     }
 
     return (
-      <>
-          <header>
-              <img alt='Menu Icon' src={hamburger} onClick={handleOpenMenu} />
-          </header>
+        <Layout>
+            <header>
+                <img alt='Menu Icon' src={hamburger} onClick={handleOpenMenu} />
+            </header>
 
-          <div className='flex main'>
-              <Sidebar data={usersData}/>
-              <AppRoutes />
-          </div>
-      </>
+            <div className='flex main'>
+                <Sidebar data={usersData}/>
+                <AppRoutes />
+            </div>
+        </Layout>
     );
 }
 

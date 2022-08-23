@@ -5,10 +5,9 @@ import * as FaIcons from "react-icons/fa";
 import {isEditModalOpen, setUsers} from "../../store/slices/globalSlice";
 import '../../styles/editmodal.scss';
 
-const EditModal = () => {
+const EditModal = ({ selectedUser }) => {
     const dispatch = useDispatch();
     const usersData = useSelector(state => state.global.usersData);
-    const selectedUser = useSelector(state => state.global.selectedUser);
     const [error, setError] = useState(null);
 
     const [currentUser, setCurrentUser] = useState({
@@ -22,7 +21,7 @@ const EditModal = () => {
     });
 
     function isValidEmail(email) {
-        return /\S+@\S+\.\S+/.test(email);
+        return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
     }
 
     const handleInputChange = event => {

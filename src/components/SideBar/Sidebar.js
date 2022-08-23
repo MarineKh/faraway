@@ -18,7 +18,7 @@ const Sidebar = ({data}) => {
                 {
                     data.map(user => {
                         return (
-                            <NavLink key={user.id} to={user.path}>
+                            <NavLink key={user.id} to={`user/${user.id}`}>
                                 <div className='flex space-between'>
                                     {user.name}
                                     <div className='change-buttons'>

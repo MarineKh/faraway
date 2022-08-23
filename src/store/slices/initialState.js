@@ -3,8 +3,7 @@ import {getStorageItem} from "../../helpers/localStorage";
 
 export function initialState() {
     return {
-        usersData: getStorageItem('localUsersData') ?  getStorageItem('localUsersData') :__mockData,
-        selectedUsers: [],
+        usersData: getStorageItem('localUsersData') || __mockData,
         isSidebarMenuOpen: false,
         isEditModalOpen: false,
         isDeleteModalOpen: false,

@@ -5,12 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import {isDeleteModalOpen, setUsers} from "../../store/slices/globalSlice";
 import '../../styles/editmodal.scss';
 
-const DeleteModal = () => {
+const DeleteModal = ({ selectedUser }) => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
 
     const usersData = useSelector(state => state.global.usersData);
-    const selectedUser = useSelector(state => state.global.selectedUser);
 
     const handleSaveData = ()=> {
         const updatedData = usersData.filter(user => user.id !== selectedUser.id);
