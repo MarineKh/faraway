@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import * as FaIcons from "react-icons/fa";
 
-import EditModal from "../EditModal/EditModal";
-import DeleteModal from "../EditModal/DeleteModal";
+import EditModal from "../Modals/EditModal";
+import DeleteModal from "../Modals/DeleteModal";
 
 import {setSelectedUser} from "../../store/slices/globalSlice";
 import image from '../../assets/home_illustration.jpg';
@@ -23,7 +23,7 @@ const Content = ({ data, isHomePage= false}) => {
             isHomePage ? (
                 <div className='home-content flex-center flex-column w100'>
                     <img className='home-image' src={image} alt='Home Illustration' />
-                    <p className='home-description'>Choose a user to see the info.</p>
+                    <p className='home-description'>Select a user to see the info.</p>
                 </div>
             ) : (
                 <>

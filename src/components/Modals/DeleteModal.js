@@ -24,7 +24,7 @@ const DeleteModal = () => {
         <div className='modal'>
             <div className='modal-content'>
                 <div className='modal-body'>
-                    <h3>Are you sure you want to delete this user?</h3>
+                    <p className='delete-message'>Are you sure you want to delete this user?</p>
                 </div>
 
                 <div className='modal-footer flex'>
